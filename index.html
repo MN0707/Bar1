@@ -41,11 +41,12 @@
           for (var place in pages) {
             var page = pages[place];
             var title = page.title;
+	    var dist = page.dist; 
             var pageLink = "https://en.wikipedia.org/wiki/" + title.replace(" ", "_");
             var listItem = document.createElement("li");
             var link = document.createElement("a");
-            link.href = pageLink;
-            link.innerHTML = title;
+            link.href = pageLink; 
+            link.innerHTML = title + " - ptp distance - " + dist + " meters";
             listItem.appendChild(link);
             pagesList.appendChild(listItem);
           }
