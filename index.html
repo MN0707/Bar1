@@ -1,1 +1,61 @@
-<H1> Helllloooooo!  </H1>
+<html>
+  <head>
+    <title>Wikipedia Geosearch API Example</title>
+  </head>
+  <body>
+    <h1>Wikipedia Geosearch API Example</h1>
+    <ul id="pages">
+      <li>Loading...</li>
+    </ul>
+
+    <script>
+	navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+		
+      var url = "https://en.wikipedia.org/w/api.php"; 
+
+      var params = {
+        action: "query",
+        list: "geosearch",
+        gscoord: "37.7891838|-122.4033522",
+        gsradius: "10000",
+        gslimit: "30",
+        format: "json"
+      };
+	  
+	  params.gscoord=latitude+"|"+longitude
+	  
+	//window.alert(params.gscoord)
+	
+      url = url + "?origin=*";
+      Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
+
+      fetch(url)
+        .then(function(response){return response.json();})
+        .then(function(response) {
+          var pages = response.query.geosearch;
+          var pagesList = document.getElementById("pages");
+          pagesList.innerHTML = "";
+
+          for (var place in pages) {
+            var page = pages[place];
+            var title = page.title;
+            var pageLink = "https://en.wikipedia.org/wiki/" + title.replace(" ", "_");
+            var listItem = document.createElement("li");
+            var link = document.createElement("a");
+            link.href = pageLink;
+            link.innerHTML = title;
+            listItem.appendChild(link);
+            pagesList.appendChild(listItem);
+          }
+        })
+        .catch(function(error){
+          var pagesList = document.getElementById("pages");
+          pagesList.innerHTML = "Error: " + error;
+        });
+		
+		});
+    </script>
+  </body>
+</html>
