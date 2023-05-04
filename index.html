@@ -46,7 +46,7 @@
             var listItem = document.createElement("li");
             var link = document.createElement("a");
             link.href = pageLink; 
-            link.innerHTML = title + " - " + dist + " meters";
+            link.innerHTML = title + " - " + dist + " m; " + '<a href="https://www.google.com/maps/search/?api=1&query=37.7891838,-122.4033522" target="_blank">GoogleMaps</a>';
             listItem.appendChild(link);
             pagesList.appendChild(listItem);
           }
