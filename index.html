@@ -17,10 +17,15 @@
 
       var params = {
         action: "query",
-        list: "geosearch",
-        gscoord: "37.7891838|-122.4033522",
-        gsradius: "10000",
-        gslimit: "30",
+        generator: "geosearch",
+        ggscoord: "41.388614|2.131245",
+        ggsradius: "10000",
+        ggslimit: "10",
+        prop: "extracts|pageimages",
+        exintro: "",
+        explaintext: "",
+        piprop: "thumbnail",
+        pilimit: "max",
         format: "json"
       };
 	  
@@ -34,12 +39,12 @@
       fetch(url)
         .then(function(response){return response.json();})
         .then(function(response) {
-          var pages = response.query.geosearch;
+          var pages = response.query.pages;
           var pagesList = document.getElementById("pages");
           pagesList.innerHTML = "";
 
           for (var place in pages) {
-            var page = pages[place];
+            var page = pages[pageId];
             var title = page.title;
 	    var dist = page.dist; 
 	    var lat = page.lat;
