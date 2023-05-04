@@ -45,11 +45,18 @@
 	    var lat = page.lat;
             var lon = page.lon;
             var pageLink = "https://en.wikipedia.org/wiki/" + title.replace(" ", "_");
+            var thumbnail = page.thumbnail.source;
+		  
             var listItem = document.createElement("li");
             var link = document.createElement("a");
             link.href = pageLink; 
             link.innerHTML = title + " - " + dist + " m ; " + '<a href="https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lon + '" target="_blank">GoogleMaps</a>';
             listItem.appendChild(link);
+		  
+	    var image = document.createElement("img");
+            image.src = thumbnail;
+            listItem.appendChild(image);
+		  
             pagesList.appendChild(listItem);
           }
         })
