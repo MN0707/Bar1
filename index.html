@@ -17,15 +17,10 @@
 
       var params = {
         action: "query",
-        generator: "geosearch",
-        ggscoord: "41.388614|2.131245",
-        ggsradius: "10000",
-        ggslimit: "10",
-        prop: "extracts|pageimages",
-        exintro: "",
-        explaintext: "",
-        piprop: "thumbnail",
-        pilimit: "max",
+        list: "geosearch",
+        gscoord: "37.7891838|-122.4033522",
+        gsradius: "10000",
+        gslimit: "30",
         format: "json"
       };
 	  
@@ -39,32 +34,23 @@
       fetch(url)
         .then(function(response){return response.json();})
         .then(function(response) {
-          var pages = response.query.pages;
+          var pages = response.query.geosearch;
           var pagesList = document.getElementById("pages");
           pagesList.innerHTML = "";
 
           for (var place in pages) {
             var page = pages[place];
-		if (page.thumbnail) {
-		    var title = page.title;
-		    var dist = page.dist; 
-		    var lat = page.lat;
-		    var lon = page.lon;
-		    var pageLink = "https://en.wikipedia.org/wiki/" + title.replace(" ", "_");
-		    var thumbnail = page.thumbnail.source;
-
-		    var listItem = document.createElement("li");
-		    var link = document.createElement("a");
-		    link.href = pageLink; 
-		    link.innerHTML = title + " - " + dist + " m ; " + '<a href="https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lon + '" target="_blank">GoogleMaps</a>';
-		    listItem.appendChild(link);
-
-		    var image = document.createElement("img");
-		    image.src = thumbnail;
-		    listItem.appendChild(image);
-
-		    pagesList.appendChild(listItem);
-		}
+            var title = page.title;
+	    var dist = page.dist; 
+	    var lat = page.lat;
+            var lon = page.lon;
+            var pageLink = "https://en.wikipedia.org/wiki/" + title.replace(" ", "_");
+            var listItem = document.createElement("li");
+            var link = document.createElement("a");
+            link.href = pageLink; 
+            link.innerHTML = title + " - " + dist + " m ; " + '<a href="https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lon + '" target="_blank">GoogleMaps</a>';
+            listItem.appendChild(link);
+            pagesList.appendChild(listItem);
           }
         })
         .catch(function(error){
