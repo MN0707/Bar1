@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Onboarding 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: green;
+            color: white;
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Onboarding 1</h1>
+
+    <div id="introduction-section">
+        <p>Terms and conditions small description paragraph with a link to terms and conditions. <u><a href="terms.html">WARIFA terms.</a></u>
+            <label>
+                <input type="checkbox" id="terms-checkbox" />
+                I do agree with terms and conditions
+            </label>
+        </p>
+    </div>
+
+    <div id="question-section">
+        <h2>Do you have any of the following conditions?</h2>
+        <div id="checkboxes-section">
+            <label>
+                <input type="checkbox" name="condition" value="CVD" />
+                CVD
+            </label>
+            <label>
+                <input type="checkbox" name="condition" value="T1D" />
+                T1D
+            </label>
+            <label>
+                <input type="checkbox" name="condition" value="Melanoma" />
+                Melanoma
+            </label>
+            <label>
+                <input type="checkbox" name="condition" value="None" />
+                None of the above
+            </label>
+        </div>
+    </div>
+
+    <div id="button-section">
+        <button type="button" onclick="handleFormSubmit()">Next</button>
+    </div>
+
+    <script>
+        function handleFormSubmit() {
+            var termsCheckbox = document.getElementById("terms-checkbox");
+            var checkboxes = document.getElementsByName("condition");
+
+            // Check if terms checkbox is not selected
+            if (!termsCheckbox.checked) {
+                alert("Please accept terms and conditions!");
+                return;
+            }
+
+            // Check if "None of the above" is selected
+            var noneCheckbox = document.querySelector('input[value="None"]');
+            if (noneCheckbox.checked) {
+                // Uncheck all other checkboxes
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox !== noneCheckbox) {
+                        checkbox.checked = false;
+                    }
+                });
+            } else {
+                // Check if any of the conditions checkboxes is selected
+                var anyConditionChecked = Array.from(checkboxes).some(function (checkbox) {
+                    return checkbox.checked;
+                });
+
+                // If none of the conditions checkboxes is selected
+                if (!anyConditionChecked) {
+                    alert("Please select at least one condition or choose 'None of the above'.");
+                    return;
+                }
+            }
+
+            // Form submission logic can be added here
+            // For example, you can redirect to the next page:
+            window.location.href = "warifaonboarding2.html";
+        }
+    </script>
+</body>
+</html>
