@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Onboarding 2 </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .checkboxes {
+      margin-bottom: 10px;
+    }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+			background-color:green;
+			color:white;
+			border-color:green;
+        }
+  </style>
+</head>
+<body>
+  <h1>User Onboarding 2</h1>
+
+  <div class="introduction">
+    <p>If you want to know more personalized information about the risks associated with these conditions (CVD, Diabetes, Melanoma), the app needs to collect some relevant information about you. </p>
+	<p>Feel free to select how much time you have to fill in the questionnaires. We would appreciate all sections to be completed.</p>
+  </div>
+
+  <div class="question">
+    <p><strong>Which sections do you like to complete?</strong></p>
+  </div>
+
+  <div class="checkboxes">
+    <input type="checkbox" id="cvd" name="section" value="cvd">
+    <label for="cvd">CVD (5-7 min to fill in)</label><br>
+
+    <input type="checkbox" id="t1d" name="section" value="t1d">
+    <label for="t1d">T1D (7-10 min duration)</label><br>
+
+    <input type="checkbox" id="melanoma" name="section" value="melanoma">
+    <label for="melanoma">Melanoma (5 min + photos to upload)</label><br>
+
+    <input type="checkbox" id="all" name="section" value="all">
+    <label for="all">All the sections (17-25 min + photos to upload)</label>
+  </div>
+	
+	<a link=./warifaonboarding1.html> 
+  <button type="button">Next</button> </a>
+
+</body>
+</html>
