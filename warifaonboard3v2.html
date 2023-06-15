@@ -3,58 +3,134 @@
 <head>
   <title>Onboarding</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
+    
+/* Mobile style*/  
+@media (min-width:320px)  { 
 
-	.form-container {
-		max-width: 400px;
-		margin: 0 auto;
-		background-color: #fff;
-		padding: 20px;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  line-height: 1.5;
+  background-color: white;
+  color: grey;
+}
 
-    h2 {
-      text-align: center;
-      margin-top: 0;
-    }
+h2 {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2.5em;
+}
 
-    p {
-      margin-top: 0;
-    }
+.form-container {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
+p {
+  margin-top: 0;
+  color: grey;
+  font-size: 2em;
+}
 
-    input[type="checkbox"] {
-      margin-right: 5px;
-    }
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2em;
+}
 
-    .error-message {
-      color: red;
-      font-weight: bold;
-      margin-top: 10px;
-    }
+input {
+  margin-right: 5px;
+  font-size: 1em;
+  vertical-align: middle;
+}
 
-    .button-container {
-      text-align: center;
-      margin-top: 20px;
-    }
+input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(2);
+  vertical-align: middle;
+}
 
-    .button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  font-size: 2em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/******************/
+}
+
+/* Desktop style****************/
+@media (min-width:1025px) {
+
+h2 {
+  text-align: left;
+  font-size: 1em;  
+  padding: 20px 0;
+}
+
+.form-container {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+input {
+  margin-right: 5px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(1);
+  vertical-align: middle;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+p {
+  margin-top: 0;
+  color: dark-grey;
+  font-size: 0.5em;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+}
+
   </style>
 </head>
 <body>
