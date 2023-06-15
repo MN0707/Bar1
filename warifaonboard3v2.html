@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Onboarding</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+	.form-container {
+		max-width: 400px;
+		margin: 0 auto;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Activity Trackers</h2>
+    <p>Sports trackers takes valuable information for the risk evaluation algorithms improving their accuracy with up to 30%. Would you like to connect ay of the following devices?</p>
+    <form id="myForm">
+      <label>
+        <input type="checkbox" name="optionA"> Google Health
+      </label>
+      <label>
+        <input type="checkbox" name="optionB"> Fit Bit
+      </label>
+      <label>
+        <input type="checkbox" name="optionC"> Maybe later
+      </label>
+	  <label>
+        <input type="checkbox" name="optionD"> I do not have such a device
+      </label>
+      <div class="button-container">
+        <button type="button" onclick="validateForm()" class="button">Next</button>
+      </div>
+    </form>
+    <div id="error" class="error-message"></div>
+  </div>
+
+  <script>
+    function validateForm() {
+      var optionA = document.getElementsByName("optionA")[0].checked;
+      var optionB = document.getElementsByName("optionB")[0].checked;
+      var optionC = document.getElementsByName("optionC")[0].checked;
+	  var optionD = document.getElementsByName("optionD")[0].checked;
+
+      if (!optionA && !optionB && !optionC && !optionD) {
+        document.getElementById("error").innerHTML = "At least one of the options should be checked!";
+      } else {
+        document.getElementById("error").innerHTML = "Thank you!"
+		setTimeout(function() {window.location.href = "https://mn0707.github.io/Bar1/warifaonboard4v2.html";}, 1000);
+        // You can add additional else if conditions for other combinations if needed.
+      }
+    }
+  </script>
+</body>
+</html>
