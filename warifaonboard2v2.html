@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Onboarding</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+	.form-container {
+		max-width: 400px;
+		margin: 0 auto;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Current Conditions</h2>
+    <p>Do you have any of the following conditions:</p>
+    <form id="myForm">
+      <label>
+        <input type="checkbox" name="optionA"> CVD
+      </label>
+      <label>
+        <input type="checkbox" name="optionB"> T1D
+      </label>
+      <label>
+        <input type="checkbox" name="optionC"> Melanoma
+      </label>
+	  <label>
+        <input type="checkbox" name="optionD"> No Condition
+      </label>
+      <div class="button-container">
+        <button type="button" onclick="validateForm()" class="button">Next</button>
+      </div>
+    </form>
+    <div id="error" class="error-message"></div>
+  </div>
+
+  <script>
+    function validateForm() {
+      var optionA = document.getElementsByName("optionA")[0].checked;
+      var optionB = document.getElementsByName("optionB")[0].checked;
+      var optionC = document.getElementsByName("optionC")[0].checked;
+	  var optionD = document.getElementsByName("optionD")[0].checked;
+
+      if (!optionA && !optionB && !optionC && !optionD) {
+        document.getElementById("error").innerHTML = "At least one of the options should be checked!";
+      } else {
+	    document.getElementById("error").innerHTML = "Thank you!"
+		setTimeout(function() {window.location.href = "https://mn0707.github.io/Bar1/warifaonboard3v2.html";}, 1000);
+        // You can add additional else if conditions for other combinations if needed.
+      }
+    }
+  </script>
+</body>
+</html>
