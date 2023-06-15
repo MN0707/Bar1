@@ -1,167 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Responsive Form</title>
+  <meta charset="UTF-8">
+  <title>Responsive Text Color Example</title>
   <style>
-  /* Reset default styles */
-	* {
-	  box-sizing: border-box;
-	  margin: 0;
-	  padding: 0;
-	}
-
-	body {
-      font-family: Arial, sans-serif;
-	  font-size: 1em;
-	  line-height: 1.5;
+    /* Default style */
+    p {
+      color: black;
     }
-
-    .container {
-      max-width: 100%;
-      margin: 0 auto;
-      background-color: #D3D3D3;
-      padding: 20px;
-      border-radius: 5px;
+    
+    /* Media query for mobile */
+    @media (max-width: 767px) {
+      p {
+        color: blue;
+      }
     }
-	
-	/* Mobile styles */
-	.header {
-	  text-align: center;
-	  padding: 20px 0;
-	}
-
-    h2 {
-      text-align: center;
-      margin-top: 0;
+    
+    /* Media query for desktop */
+    @media (min-width: 768px) {
+      p {
+        color: red;
+      }
     }
-	
-	.section {
-	  margin-bottom: 20px;
-	}
-
-	.section h2 {
-	  font-size: 24px;
-	  margin-bottom: 10px;
-	}
-
-	.section p {
-	  font-size: 16px;
-	  margin-bottom: 10px;
-	}
-	
-	.form-field {
-	  margin-bottom: 10px;
-	}
-
-	.form-field label {
-	  font-weight: bold;
-	}
-	
-	.form-field input,
-	.form-field select {
-	  width: 100%;
-	  padding: 10px;
-	  border: 1px solid #ccc;
-	  border-radius: 4px;
-	}
-	
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-	
-    input[type="checkbox"] {
-      margin-right: 5px;
-      vertical-align: middle;
-    }
-
-    .error-message {
-      color: red;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .button-container {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .button {
-	  display: block;
-	  width: 100%;
-	  padding: 10px;
-	  background-color: #4CAF50;
-	  color: white;
-	  border: none;
-	  border-radius: 5px;
-	  cursor: pointer;
-	}
-	
-	.error-message {
-	  color: red;
-	  font-weight: bold;
-	  margin-top: 10px;
-	}
-		
-	/* Tablet styles */
-	@media (min-width: 768px) {
-	  .container {
-		max-width: 750px;
-	  }
-
-	  .section h2 {
-		font-size: 32px;
-	  }
-
-	  .section p {
-		font-size: 18px;
-	  }
-
-	  .form-field {
-		display: flex;
-		align-items: center;
-	  }
-
-	  .form-field label {
-		flex-basis: 30%;
-	  }
-
-	  .form-field input,
-	  .form-field select {
-		flex: 1;
-		margin-left: 10px;
-	  }
-	}
-
-	/* Desktop styles */
-	@media (min-width: 1024px) {
-	  .container {
-		max-width: 960px;
-	  }
-
-	  .section {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	  }
-
-	  .form-field {
-		margin-bottom: 0;
-		flex-basis: 45%;
-	  }
-
-	  .button {
-		max-width: 200px;
-	  }
-	}
   </style>
 </head>
 <body>
-  <div class="container">
-	<h1>Hello World!</h1>
-	<p>Paragraph text.</p>
-	<p>Paragraph text.</p>
-	
-  </div>
+  <h1>Responsive Text Color Example</h1>
+  <p>This is a simple HTML document where the color of the text changes based on the screen size.</p>
 </body>
 </html>
