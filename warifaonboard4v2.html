@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Onboarding</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+	.form-container {
+		max-width: 400px;
+		margin: 0 auto;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Data Collection Approach</h2>
+    <p>For risk evaluation of these conditions specific informations should be added to your profile. You may complete them all at once, or in multiple sessions.
+Select all or one off the options.</p>
+    <form id="myForm">
+      <label>
+        <input type="checkbox" name="optionA"> All the sections (17-25 min + photos to upload) 
+      </label>
+      <label>
+        <input type="checkbox" name="optionB"> CVD (5-7 min to fill in)
+      </label>
+	  <label>
+        <input type="checkbox" name="optionC"> T1D (7-10 min duration)
+      </label>
+	  <label>
+        <input type="checkbox" name="optionD"> Melanoma (5 min + photos to upload)
+      </label>
+	  <label>
+        <input type="checkbox" name="optionE"> Maybe later!
+      </label>
+      <div class="button-container">
+        <button type="button" onclick="validateForm()" class="button">Next</button>
+      </div>
+    </form>
+    <div id="error" class="error-message"></div>
+  </div>
+
+  <script>
+	function validateForm() {
+		  var optionA = document.getElementsByName("optionA")[0].checked;
+		  var optionB = document.getElementsByName("optionB")[0].checked;
+		  var optionC = document.getElementsByName("optionC")[0].checked;
+		  var optionD = document.getElementsByName("optionD")[0].checked;
+		  var optionE = document.getElementsByName("optionE")[0].checked;
+
+		  if (!optionA && !optionB && !optionC && !optionD && !optionE) {
+			document.getElementById("error").innerHTML = "At least one of the options should be checked!";
+		  } else if(optionE) {
+			document.getElementById("error").innerHTML = "See you later aligator!"
+			setTimeout(function() {window.location.href = "https://mn0707.github.io/Bar1/warifaonboard1v2.html";}, 1000);
+			// You can add additional else if conditions for other combinations if needed.
+		  }
+		  else {
+			document.getElementById("error").innerHTML = "Redirect to the correspondent form! ... ... ... ... TBD"
+			setTimeout(function() {window.location.href = "https://mn0707.github.io/Bar1/warifaonboard1v2.html";}, 1000);
+			// You can add additional else if conditions for other combinations if needed.
+		  }
+		}
+  </script>
+</body>
+</html>
