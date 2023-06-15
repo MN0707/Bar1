@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Onboarding</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+	.form-container {
+		max-width: 400px;
+		margin: 0 auto;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Welcome !</h2>
+    <p>Welcome message!</p>
+	<p>We treat your data with maximum of security and attention! That is why we need your GDPR aproval and Terms and conditions acceptance.</p>
+	<p>Did you know that WARIFA is the only project initiative that aim to reduce risk factors for three of the most important conditions: CVD, T1D and Melanoma?
+Thre are more than 47 doctors, scientists and programmers involved in the project so you get the best out of this application.
+In order for the app to work we some information is needed.</p>
+    <form id="myForm">
+      <label>
+        <input type="checkbox" name="optionA"> I do agree with <u>Terms and conditions.</u>
+      </label>
+      <div class="button-container">
+        <button type="button" onclick="validateForm()" class="button">Next</button>
+      </div>
+    </form>
+    <div id="error" class="error-message"></div>
+  </div>
+
+  <script>
+    function validateForm() {
+      var optionA = document.getElementsByName("optionA")[0].checked;
+
+      if (!optionA) {
+        document.getElementById("error").innerHTML = "Please accept the terms and conditions!";
+      } else {
+	    document.getElementById("error").innerHTML = "Thank you!"
+		setTimeout(function() {window.location.href = "file:///C:/Users/Mihai%20Namolosanu/Desktop/aaaaaaV2.html";}, 1000);
+        // You can add additional else if conditions for other combinations if needed.
+      }
+    }
+  </script>
+</body>
+</html>
